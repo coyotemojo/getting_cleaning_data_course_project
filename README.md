@@ -27,6 +27,20 @@ You can download the .zip file of the data from https://d396qusza40orc.cloudfron
 
 The output of the script will be a locally saved file called tidy_summary_of_UCI_HAR_Dataset.txt, a file containing a tidy dataset with average measurements of a specified set of variables for each activity for each subject.  
 
+## How it works ##
+1.  First the script loads in the features.txt file and uses grepl() to get the indices of variables that have either mean() or std() in their names
+2.  The script loads the X_test and X_train data and stacks the data using rbind.
+3.  The script then subsets the combined dataframe using the indices of the 'columns to keep' found in step 1.
+4.  The script does a few manipulations to the variable names to make them R-compliant column names and a little more descriptive
+5.  The script assigns the cleaned up column names to the combined measurement dataframe
+6.  Load the activity_labels id-to-descriptive label mapping file
+7.  Load the y_test and y_train activity ids and stack them using rbind (in the same order as step 2 above!).
+8.  Join the y data with the descriptive labels by joining on 'id'
+9.  Load subject_test.txt and subject_train.txt files and stack them in the same order as steps 2 and 7.
+10.  Create the overall dataframe by cbinding subject ids, activity labels, and all measurement data
+11.  Use dplyr to group by subject id and activity and use summarise_each to calculate the mean value of all the measurement variables.
+12.  Write the data out to a file.  Done!
+
 ## Discussion ##
 
 The instructions for the project were to select "only the measurements on the mean and standard deviation for each measurement."  I took this to mean the 66 features that specifically had only "mean()" or "std()" in their names.  A case could be made to include columns with things like "meanFreq" but I decided not to include these.

@@ -17,7 +17,7 @@ To run this code, please enter the following commands in R:
 
 ```
 library(devtools)
-source_url("https://raw.github.com/coyotemojo/geting_cleaning_data_course_project/run_analysis.r")
+source_url("https://raw.githubusercontent.com/coyotemojo/getting_cleaning_data_course_project/master/run_analysis.r")
 ```
 
 This file expects to find the data directory /UCI HAR Dataset/ in the current working directory.  This dataset is described here:

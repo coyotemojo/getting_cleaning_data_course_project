@@ -11,7 +11,7 @@ The following packages must be installed prior to running this code:
 
 - `dplyr`
 
-In addition, there is a codebook.md file with some explanation of the variables in the resulting dataset.
+In addition, this project contaings a CodeBook.md file with some explanation of the variables in the resulting dataset.
 
 To run this code, please enter the following commands in R:
 

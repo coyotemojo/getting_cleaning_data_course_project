@@ -83,3 +83,7 @@ tidy_all <- group_by(all_df, subject_id, activity) %>%
 
 write.table(tidy_all, file = './tidy_summary_of_UCI_HAR_Dataset.txt')
 
+
+#library(devtools)
+#source_url("https://raw.githubusercontent.com/coyotemojo/getting_cleaning_data_course_project/master/run_analysis.r")
+
